@@ -10,6 +10,11 @@
 <meta property="og:description" content="老人防跌、老人居家安全、銀髮族浴室防滑與扶手選購要點，幫爸媽把家裡變安心。">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="zh_TW">
+<link rel="canonical" href="https://elder-safety-guide.pages.dev/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="長輩居家安全｜爸媽在家，安全第一">
+<meta name="twitter:description" content="老人防跌、老人居家安全、銀髮族浴室防滑與扶手選購要點，幫爸媽把家裡變安心。">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "跌倒了，要馬上扶起來？", "acceptedAnswer": {"@type": "Answer", "text": "先看意識、問哪裡痛、有沒有流血；如果疑似骨折或頭部撞到，不要硬拉硬扶，先讓他躺好，必要時打 119 或送醫評估。"}}, {"@type": "Question", "name": "裝了扶手，就夠安全了？", "acceptedAnswer": {"@type": "Answer", "text": "扶手只是其中一項，地面防滑、夜燈、動線雜物、防滑鞋要一起做，只裝扶手還是不夠。"}}, {"@type": "Question", "name": "跌倒只是不小心，沒什麼？", "acceptedAnswer": {"@type": "Answer", "text": "偶爾一次可能是意外，但反覆跌倒值得留意，視力、藥物、肌力、地面環境都可能是原因，可以跟醫師或藥師討論。"}}, {"@type": "Question", "name": "長輩不肯用輔具，覺得丟臉怎麼辦？", "acceptedAnswer": {"@type": "Answer", "text": "從最不顯眼的開始，例如浴室扶手、防滑墊；讓他自己挑款式，說是為了讓全家人安心，不是他不行了。"}}, {"@type": "Question", "name": "跌倒後看起來沒事，要不要去醫院？", "acceptedAnswer": {"@type": "Answer", "text": "撞到頭、有吃抗凝血藥、隔天更痛或瘀青變大、意識不清楚，都要去看；當下沒事也要多留意幾天，不確定就問醫師或打 119。"}}, {"@type": "Question", "name": "一個人住，萬一出事怎麼求救？", "acceptedAnswer": {"@type": "Answer", "text": "緊急呼叫鈴、手機隨身、每天固定和一個人聯絡，沒接到就有人會去看；備用鑰匙留一把給信任的子女或鄰居。"}}]}</script>
 <style>
   :root{
     --cream:#FFF8E6; --paper:#FFFFFF; --ink:#3A3226; --muted:#7A6F5C;
@@ -112,6 +117,7 @@
       <a href="#checklist">檢查清單</a>
       <a href="#myths">迷思破解</a>
       <a href="#fall">跌倒處理</a>
+      <a href="#fallrisk">跌倒風險檢測</a>
       <a href="#burn">燙傷處理</a>
       <a href="#night">半夜起床</a>
       <a href="#meds">用藥與吃飯</a>
@@ -292,6 +298,25 @@
     </div>
     <p class="note">📝 事後記一下：何時、在哪裡、怎麼跌、最近藥物有沒有變化，回診時給醫師參考。</p>
   </section>
+
+  <section id="fallrisk">
+    <h2><span class="pill">自我檢視</span>跌倒風險檢測</h2>
+    <p class="sub">勾一勾，看看目前的跌倒風險大概在哪裡。</p>
+    <div class="card">
+      <ul class="check">
+        <li><input type="checkbox" class="risk-item"> 過去一年曾經跌倒過</li>
+        <li><input type="checkbox" class="risk-item"> 每天吃 4 種以上的藥</li>
+        <li><input type="checkbox" class="risk-item"> 起身或走路時會頭暈、站不穩</li>
+        <li><input type="checkbox" class="risk-item"> 視力不好，看不清楚階梯、門檻</li>
+        <li><input type="checkbox" class="risk-item"> 浴室沒有扶手或防滑墊</li>
+        <li><input type="checkbox" class="risk-item"> 半夜起床上廁所常常摸黑走</li>
+      </ul>
+      <button id="risk-btn" type="button" style="background:#E8730C;color:#fff;border:0;font-size:19px;font-weight:700;padding:12px 28px;border-radius:999px;cursor:pointer;margin-top:12px">看看結果</button>
+      <p id="risk-result" style="margin:14px 0 0;font-weight:700"></p>
+    </div>
+    <p class="note">這只是自我檢視參考，不是診斷；有疑慮請找醫師或藥師評估。</p>
+  </section>
+
 
   <section id="burn">
     <h2><span class="pill">萬一燙傷</span>燙傷了，沖脫泡蓋送</h2>
@@ -639,5 +664,18 @@
   <footer>© 2026 長輩居家安全<br><a href="#">回到頂部 ↑</a></footer>
 </div>
 <img src="https://site-stats.terryboy122.workers.dev/t?site=elder-safety-guide" style="display:none" alt="">
+<script>
+(function(){
+  var btn = document.getElementById('risk-btn');
+  if(!btn) return;
+  btn.addEventListener('click', function(){
+    var n = document.querySelectorAll('.risk-item:checked').length;
+    var r = document.getElementById('risk-result');
+    if(n === 0){ r.textContent = '目前勾選 0 項，風險較低，繼續保持就好。'; }
+    else if(n <= 2){ r.textContent = '勾選 ' + n + ' 項，有一點風險，建議先從浴室扶手、防滑墊、感應夜燈做起。'; }
+    else { r.textContent = '勾選 ' + n + ' 項，風險偏高，建議盡快找醫師或藥師評估用藥和身體狀況，並跟家人討論怎麼改善。'; }
+  });
+})();
+</script>
 </body>
 </html>
