@@ -39,9 +39,13 @@
   .hero p{font-size:21px;margin:0;color:#5C4F3A}
   .note{background:var(--paper);border:2px dashed #E8C87A;border-radius:16px;
     padding:14px 20px;margin:20px 0;font-size:18px;text-align:center}
-  h2{font-size:30px;line-height:1.4;margin:44px 0 6px}
+  h2{font-size:30px;line-height:1.4;margin:52px 0 8px;padding-bottom:10px;border-bottom:3px solid #F0DFAE}
   h2 .pill{display:inline-block;font-size:18px;background:var(--sun);border-radius:999px;padding:4px 16px;margin-right:8px;vertical-align:middle}
-  .sub{color:var(--muted);font-size:18px;margin:0 0 18px}
+  .sub{color:var(--muted);font-size:18px;margin:0 0 20px}
+  .zone{background:var(--soft-orange);border-radius:14px;padding:10px 18px;font-size:21px;margin:26px 0 12px}
+  .zone.teal{background:var(--soft-teal)} .zone.yellow{background:var(--soft-yellow)} .zone.green{background:var(--soft-green)}
+  .hero-links{margin-top:22px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+  .hero-links a{background:#fff;border:2px solid var(--orange);color:var(--orange-dark);text-decoration:none;font-weight:700;padding:10px 22px;border-radius:999px;font-size:19px}
   .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
   .grid.two{grid-template-columns:repeat(2,1fr)}
   .card{background:var(--paper);border-radius:22px;padding:22px;
@@ -53,8 +57,8 @@
   .card.yellow{background:var(--soft-yellow)} .card.green{background:var(--soft-green)}
   .check{list-style:none;padding:0;margin:0}
   .check li{display:flex;gap:12px;align-items:flex-start;background:var(--paper);
-    border-radius:14px;padding:12px 16px;margin-bottom:10px;font-size:19px}
-  .check input{width:24px;height:24px;margin-top:6px;accent-color:var(--teal);flex-shrink:0}
+    border-radius:14px;padding:14px 18px;margin-bottom:10px;font-size:19px}
+  .check input{width:28px;height:28px;margin-top:4px;accent-color:var(--teal);flex-shrink:0}
   .myth{border-left:8px solid var(--coral)}
   .myth .q{font-weight:700;font-size:21px}
   .myth .a{margin-top:8px}
@@ -70,6 +74,8 @@
     .hero h1{font-size:32px}
     .grid,.grid.two{grid-template-columns:1fr}
     h2{font-size:26px}
+    .hero{padding:36px 20px}
+    .hero-links a{width:100%;max-width:320px;text-align:center}
     section[id]{scroll-margin-top:70px}
     .nav-toggle{display:inline-block}
     .nav-links{display:none}
@@ -86,6 +92,8 @@
       <a href="#principles">三大原則</a>
       <a href="#checklist">檢查清單</a>
       <a href="#myths">迷思破解</a>
+      <a href="#fall">跌倒處理</a>
+      <a href="#night">半夜起床</a>
       <a href="#gear">安全設備</a>
       <a href="#videos">影片教室</a>
       <a href="#about">關於本頁</a>
@@ -114,6 +122,11 @@
     <span class="badge">民間整理・非官方網站</span>
     <h1>長輩居家安全<br>爸媽在家，安全第一</h1>
     <p>不用大工程，先從家裡最常出事的地方開始檢查，<br>一樣一樣把安心補起來。</p>
+    <div class="hero-links">
+      <a href="#checklist">✓ 檢查清單</a>
+      <a href="#fall">跌倒了怎麼辦</a>
+      <a href="#night">半夜起床三步驟</a>
+    </div>
   </header>
 
   <p class="note">💡 這個頁面是給子女和長輩一起看的：字比較大、步驟寫得比較白話，手機看也沒問題。</p>
@@ -125,17 +138,17 @@
       <div class="card orange">
         <div class="icon">🧦</div>
         <h3>防跌第一</h3>
-        <p>地面防滑、動線淨空、光線充足，是所有安全的起點。</p>
+        <p>浴室鋪防滑墊、走道不堆雜物、鞋子選包覆式防滑底。先把家裡走一圈，絆腳的東西清掉，跌倒的機會就少一大半。</p>
       </div>
       <div class="card teal">
         <div class="icon">🍲</div>
         <h3>防燙小心</h3>
-        <p>廚房和浴室的水溫、鍋具擺放，先約好安全的做法。</p>
+        <p>洗澡前先試水溫、熱水器水溫不要調太高，鍋柄轉向內側、端熱湯慢慢走。廚房和浴室的習慣先跟家人約好。</p>
       </div>
       <div class="card yellow">
         <div class="icon">🌙</div>
         <h3>夜裡不摸黑</h3>
-        <p>臥室到廁所的路，半夜也要看得清楚、扶得到東西。</p>
+        <p>臥室到廁所的動線裝感應夜燈，拖鞋和眼鏡放固定位置，半夜起床不用找東西、不用摸黑走。</p>
       </div>
     </div>
   </section>
@@ -144,29 +157,31 @@
     <h2><span class="pill">動手做</span>居家安全檢查清單</h2>
     <p class="sub">一區一區對照著勾，勾完就知道家裡還缺什麼。</p>
 
-    <h3>🛁 浴室</h3>
+    <h3 class="zone teal">🛁 浴室</h3>
     <ul class="check">
       <li><input type="checkbox"> 馬桶旁、淋浴區有扶手可以握</li>
       <li><input type="checkbox"> 地面有防滑墊或防滑處理，不會一踩就滑</li>
       <li><input type="checkbox"> 有沐浴椅，洗澡不用全程站著</li>
       <li><input type="checkbox"> 熱水溫度有先調好，不會突然燙到</li>
+      <li><input type="checkbox"> 浴室門不反鎖，緊急時家人在外面進得去</li>
     </ul>
 
-    <h3>🍳 廚房</h3>
+    <h3 class="zone">🍳 廚房</h3>
     <ul class="check">
       <li><input type="checkbox"> 水槽前、爐台前地面不濕滑</li>
       <li><input type="checkbox"> 常用的東西放在不用踮腳、不用爬高的位置</li>
       <li><input type="checkbox"> 鍋柄不朝外，端熱湯有隔熱手套或抹布</li>
     </ul>
 
-    <h3>🛏️ 臥室</h3>
+    <h3 class="zone yellow">🛏️ 臥室</h3>
     <ul class="check">
       <li><input type="checkbox"> 床邊有扶手或穩固的家具可以借力起身</li>
       <li><input type="checkbox"> 床頭到廁所有感應夜燈，半夜不用摸黑</li>
       <li><input type="checkbox"> 拖鞋是包覆式、防滑底，不穿鬆垮的拖鞋走動</li>
+      <li><input type="checkbox"> 眼鏡、手機、呼叫鈴放床邊，伸手就拿得到</li>
     </ul>
 
-    <h3>🚪 樓梯與玄關</h3>
+    <h3 class="zone green">🚪 樓梯與玄關</h3>
     <ul class="check">
       <li><input type="checkbox"> 樓梯兩邊有扶手，階梯邊緣看得清楚</li>
       <li><input type="checkbox"> 玄關、走道沒有雜物、電線橫在地上</li>
@@ -191,6 +206,57 @@
         <div class="a"><b>正解：</b>偶爾一次可能是意外，但反覆跌倒值得留意，視力、藥物、肌力、地面環境都可能是原因，可以跟醫師或藥師討論。</div>
       </div>
     </div>
+  </section>
+
+  <section id="fall">
+    <h2><span class="pill">萬一跌倒</span>跌倒了，先別急著扶</h2>
+    <p class="sub">扶之前先看清楚，扶錯了反而容易造成二次傷害。</p>
+    <div class="grid two">
+      <div class="card orange">
+        <div class="icon">🗣️</div>
+        <h3>1．先問話</h3>
+        <p>叫名字、問哪裡痛、看意識清不清楚，能回答、能動手腳再往下處理。</p>
+      </div>
+      <div class="card teal">
+        <div class="icon">🩹</div>
+        <h3>2．看傷勢</h3>
+        <p>有沒有流血、頭部有沒有撞到、手腳有沒有變形或動不了。</p>
+      </div>
+      <div class="card yellow">
+        <div class="icon">🚑</div>
+        <h3>3．疑似骨折或撞到頭，不要硬拉</h3>
+        <p>讓他躺好保暖、不要移動，立刻打 119 或送醫評估。</p>
+      </div>
+      <div class="card green">
+        <div class="icon">🧎</div>
+        <h3>4．人清醒、沒有明顯外傷</h3>
+        <p>先側躺屈膝、用手撐地、扶穩固的家具慢慢起來，起身後先坐著休息一下。</p>
+      </div>
+    </div>
+    <p class="note">📝 事後記一下：何時、在哪裡、怎麼跌、最近藥物有沒有變化，回診時給醫師參考。</p>
+  </section>
+
+  <section id="night">
+    <h2><span class="pill">半夜起床</span>半夜起床三步驟</h2>
+    <p class="sub">半夜跌倒很多都是起太急，慢三步，穩很多。</p>
+    <div class="grid">
+      <div class="card orange">
+        <div class="icon">1️⃣</div>
+        <h3>醒來先躺一下</h3>
+        <p>眼睛睜開、手腳動一動，不要一醒就坐起來。</p>
+      </div>
+      <div class="card teal">
+        <div class="icon">2️⃣</div>
+        <h3>坐起坐穩</h3>
+        <p>慢慢坐到床邊、雙腳放地上，坐穩、覺得不暈再站。</p>
+      </div>
+      <div class="card yellow">
+        <div class="icon">3️⃣</div>
+        <h3>站穩再走</h3>
+        <p>扶床邊或扶手站穩，夜燈亮著、拖鞋穿好，再往廁所走。</p>
+      </div>
+    </div>
+    <p class="note">💡 眼鏡、水、手機、呼叫鈴，睡前就放床邊固定位置，半夜不用找。</p>
   </section>
 
   <section id="places">
@@ -329,7 +395,7 @@
 </script>
   </section>
 
-  <footer>© 2026 長輩居家安全</footer>
+  <footer>© 2026 長輩居家安全<br><a href="#">回到頂部 ↑</a></footer>
 </div>
 <img src="https://site-stats.terryboy122.workers.dev/t?site=elder-safety-guide" style="display:none" alt="">
 </body>
