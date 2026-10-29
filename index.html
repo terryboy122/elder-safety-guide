@@ -71,11 +71,21 @@
   .soon{background:var(--paper);border:2px dashed #C9BFA6;border-radius:22px;
     padding:30px;text-align:center;font-size:19px;color:var(--muted)}
   .about{background:var(--paper);border-radius:22px;padding:24px;font-size:18px;color:#5C4F3A}
+  .videos{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .vcard{display:block;background:var(--paper);border-radius:22px;overflow:hidden;text-decoration:none;color:var(--ink);box-shadow:0 4px 16px rgba(58,50,38,.08)}
+  .vcard img{width:100%;display:block;aspect-ratio:16/9;object-fit:cover}
+  .vcard .vbody{padding:16px 18px}
+  .vcard h3{font-size:20px;margin:0 0 6px;line-height:1.45}
+  .vcard p{margin:0;font-size:17px;color:var(--muted)}
+  .swipe-hint{display:none;text-align:center;color:var(--muted);font-size:17px;margin:0 0 12px}
   footer{text-align:center;color:var(--muted);font-size:17px;margin-top:44px}
   @media (max-width:700px){
     body{font-size:18px}
     .hero h1{font-size:32px}
     .grid,.grid.two{grid-template-columns:1fr}
+    .videos{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px}
+    .videos .vcard{min-width:280px;scroll-snap-align:start}
+    .swipe-hint{display:block}
     h2{font-size:26px}
     .hero{padding:36px 20px}
     .hero-links a{width:100%;max-width:320px;text-align:center}
@@ -387,7 +397,21 @@
   <section id="videos">
     <h2><span class="pill">影片</span>影片教室</h2>
     <p class="sub">只收衛福部、國健署、醫院衛教等官方影片，確認存在後才會上架。</p>
-    <div class="soon">🎬 影片陸續加入中，歡迎提供你覺得好的官方衛教影片連結。</div>
+    <p class="swipe-hint">← 左右滑動看更多影片 →</p>
+    <div class="videos">
+      <a class="vcard" href="https://www.youtube.com/watch?v=F_ze_QvL4EU" target="_blank" rel="noopener">
+        <img src="https://i.ytimg.com/vi/F_ze_QvL4EU/hqdefault.jpg" alt="翻身擺位教學影片預覽">
+        <div class="vbody"><h3>居家照顧指導系列：翻身擺位</h3><p>衛生福利部國民健康署・6:34</p></div>
+      </a>
+      <a class="vcard" href="https://www.youtube.com/watch?v=onUWBsJHGjc" target="_blank" rel="noopener">
+        <img src="https://i.ytimg.com/vi/onUWBsJHGjc/hqdefault.jpg" alt="肌少症照護影片預覽">
+        <div class="vbody"><h3>營養關鍵，守護肌肉：高齡者肌少症照護</h3><p>成大醫院斗六分院・郭師妙營養師・2:51</p></div>
+      </a>
+      <a class="vcard" href="https://www.youtube.com/watch?v=5ofPFG5oQVs" target="_blank" rel="noopener">
+        <img src="https://i.ytimg.com/vi/5ofPFG5oQVs/hqdefault.jpg" alt="肌力檢測影片預覽">
+        <div class="vbody"><h3>功能性體適能檢測（肌力）</h3><p>弘光科大・4:44</p></div>
+      </a>
+    </div>
   </section>
 
   <section id="contact">
