@@ -116,10 +116,11 @@
     <div class="nav-links" id="nav-links">
       <a href="#alerts">重要提醒</a>
       <a href="#principles">三大原則</a>
+      <a href="#places">先看這裡</a>
       <a href="#checklist">檢查清單</a>
       <a href="#myths">迷思破解</a>
-      <a href="#fall">跌倒處理</a>
       <a href="#fallrisk">跌倒風險檢測</a>
+      <a href="#fall">跌倒處理</a>
       <a href="#burn">燙傷處理</a>
       <a href="#night">半夜起床</a>
       <a href="#meds">用藥與吃飯</a>
@@ -177,7 +178,7 @@
       <div class="card yellow">
         <div class="icon">📞</div>
         <h3>來電顯示 +1 開頭要小心</h3>
-        <p>詐騙集團把竄改號碼改成 +1 開頭，看到 +1 開頭的陌生來電先不要接、不要回撥，有疑問打 165。</p>
+        <p>詐騙集團把竄改號碼改成 +1 開頭，看到 +1 開頭的陌生來電先不要接、不要回撥，有疑問打 165。詳見<a href="#fraud">防詐騙</a>。</p>
       </div>
     </div>
   </section>
@@ -203,6 +204,33 @@
       </div>
     </div>
     <p class="note">📊 國健署統計：65 歲以上每 6 人就有 1 人一年內曾跌倒，過半跌倒發生在家裡。先把家裡檢查一遍，是最划算的第一步。</p>
+  </section>
+
+  <section id="places">
+    <h2><span class="pill">先看這裡</span>最值得先檢查的四個地方</h2>
+    <p class="sub">不用一次全改，先從這四個地方開始，效果最明顯。</p>
+    <div class="grid two">
+      <div class="card orange">
+        <div class="icon">🛁</div>
+        <h3>浴室：又濕又滑</h3>
+        <p>洗澡時地面濕、動作多，扶手＋防滑＋沐浴椅三件先補齊。</p>
+      </div>
+      <div class="card teal">
+        <div class="icon">🌙</div>
+        <h3>半夜的路：最容易摸黑跌倒</h3>
+        <p>床邊到廁所這段路，感應夜燈裝下去，半夜起床就不用摸黑走。</p>
+      </div>
+      <div class="card yellow">
+        <div class="icon">🍲</div>
+        <h3>廚房：燙傷的高發區</h3>
+        <p>熱水、熱油、熱鍋的位置和習慣先約好，端熱湯不要趕。</p>
+      </div>
+      <div class="card green">
+        <div class="icon">🚶</div>
+        <h3>樓梯與門口：上下最費力</h3>
+        <p>扶手、階梯辨識、門口換鞋椅，上下樓和進出門都輕鬆一點。</p>
+      </div>
+    </div>
   </section>
 
   <section id="checklist">
@@ -273,6 +301,25 @@
     </div>
   </section>
 
+  <section id="fallrisk">
+    <h2><span class="pill">自我檢視</span>跌倒風險檢測</h2>
+    <p class="sub">勾一勾，看看目前的跌倒風險大概在哪裡。</p>
+    <div class="card">
+      <ul class="check">
+        <li><input type="checkbox" class="risk-item"> 過去一年曾經跌倒過</li>
+        <li><input type="checkbox" class="risk-item"> 每天吃 4 種以上的藥</li>
+        <li><input type="checkbox" class="risk-item"> 起身或走路時會頭暈、站不穩</li>
+        <li><input type="checkbox" class="risk-item"> 視力不好，看不清楚階梯、門檻</li>
+        <li><input type="checkbox" class="risk-item"> 浴室沒有扶手或防滑墊</li>
+        <li><input type="checkbox" class="risk-item"> 半夜起床上廁所常常摸黑走</li>
+      </ul>
+      <button id="risk-btn" type="button" style="background:#E8730C;color:#fff;border:0;font-size:19px;font-weight:700;padding:12px 28px;border-radius:999px;cursor:pointer;margin-top:12px">看看結果</button>
+      <p id="risk-result" style="margin:14px 0 0;font-weight:700"></p>
+    </div>
+    <p class="note">這只是自我檢視參考，不是診斷；有疑慮請找醫師或藥師評估。</p>
+  </section>
+
+
   <section id="fall">
     <h2><span class="pill">萬一跌倒</span>跌倒了，先別急著扶</h2>
     <p class="sub">扶之前先看清楚，扶錯了反而容易造成二次傷害。</p>
@@ -300,25 +347,6 @@
     </div>
     <p class="note">📝 事後記一下：何時、在哪裡、怎麼跌、最近藥物有沒有變化，回診時給醫師參考。</p>
   </section>
-
-  <section id="fallrisk">
-    <h2><span class="pill">自我檢視</span>跌倒風險檢測</h2>
-    <p class="sub">勾一勾，看看目前的跌倒風險大概在哪裡。</p>
-    <div class="card">
-      <ul class="check">
-        <li><input type="checkbox" class="risk-item"> 過去一年曾經跌倒過</li>
-        <li><input type="checkbox" class="risk-item"> 每天吃 4 種以上的藥</li>
-        <li><input type="checkbox" class="risk-item"> 起身或走路時會頭暈、站不穩</li>
-        <li><input type="checkbox" class="risk-item"> 視力不好，看不清楚階梯、門檻</li>
-        <li><input type="checkbox" class="risk-item"> 浴室沒有扶手或防滑墊</li>
-        <li><input type="checkbox" class="risk-item"> 半夜起床上廁所常常摸黑走</li>
-      </ul>
-      <button id="risk-btn" type="button" style="background:#E8730C;color:#fff;border:0;font-size:19px;font-weight:700;padding:12px 28px;border-radius:999px;cursor:pointer;margin-top:12px">看看結果</button>
-      <p id="risk-result" style="margin:14px 0 0;font-weight:700"></p>
-    </div>
-    <p class="note">這只是自我檢視參考，不是診斷；有疑慮請找醫師或藥師評估。</p>
-  </section>
-
 
   <section id="burn">
     <h2><span class="pill">萬一燙傷</span>燙傷了，沖脫泡蓋送</h2>
@@ -516,33 +544,6 @@
       <li><b>自付多少看經濟狀況：</b>低收入戶免自付，中低收入戶和一般戶依分級自付一部分，實際金額評估後會告訴你。</li>
     </ul>
     <p class="note">📌 額度與品項可能調整，申請前打 1966 或問照管中心，以最新說明為準。</p>
-  </section>
-
-  <section id="places">
-    <h2><span class="pill">先看這裡</span>最值得先檢查的四個地方</h2>
-    <p class="sub">不用一次全改，先從這四個地方開始，效果最明顯。</p>
-    <div class="grid two">
-      <div class="card orange">
-        <div class="icon">🛁</div>
-        <h3>浴室：又濕又滑</h3>
-        <p>洗澡時地面濕、動作多，扶手＋防滑＋沐浴椅三件先補齊。</p>
-      </div>
-      <div class="card teal">
-        <div class="icon">🌙</div>
-        <h3>半夜的路：最容易摸黑跌倒</h3>
-        <p>床邊到廁所這段路，感應夜燈裝下去，半夜起床就不用摸黑走。</p>
-      </div>
-      <div class="card yellow">
-        <div class="icon">🍲</div>
-        <h3>廚房：燙傷的高發區</h3>
-        <p>熱水、熱油、熱鍋的位置和習慣先約好，端熱湯不要趕。</p>
-      </div>
-      <div class="card green">
-        <div class="icon">🚶</div>
-        <h3>樓梯與門口：上下最費力</h3>
-        <p>扶手、階梯辨識、門口換鞋椅，上下樓和進出門都輕鬆一點。</p>
-      </div>
-    </div>
   </section>
 
   <section id="gear">
