@@ -23,10 +23,13 @@
     font-size:19px;line-height:1.9}
   a{color:var(--teal)}
   .wrap{max-width:860px;margin:0 auto;padding:0 20px 60px}
-  nav{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;padding:18px 12px 4px}
-  nav a{display:inline-block;background:var(--paper);border:2px solid #F0DFAE;color:var(--ink);
+  nav.top{position:sticky;top:0;z-index:50;background:var(--cream);padding:10px 12px;text-align:center}
+  .nav-links{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+  nav.top a{display:inline-block;background:var(--paper);border:2px solid #F0DFAE;color:var(--ink);
     text-decoration:none;font-size:18px;font-weight:700;padding:8px 18px;border-radius:999px}
-  nav a:hover{border-color:var(--orange);color:var(--orange-dark)}
+  nav.top a:hover{border-color:var(--orange);color:var(--orange-dark)}
+  .nav-toggle{display:none;background:var(--orange);color:#fff;border:0;border-radius:999px;padding:10px 22px;font-weight:700;font-size:19px;cursor:pointer}
+  section[id]{scroll-margin-top:80px}
   .hero{background:linear-gradient(135deg,#FFE9A8,#FFD9B0 55%,#FFEFE0);
     border-radius:28px;padding:40px 28px;margin:20px 0 8px;text-align:center;
     box-shadow:0 6px 24px rgba(232,115,12,.15)}
@@ -67,20 +70,45 @@
     .hero h1{font-size:32px}
     .grid,.grid.two{grid-template-columns:1fr}
     h2{font-size:26px}
+    section[id]{scroll-margin-top:70px}
+    .nav-toggle{display:inline-block}
+    .nav-links{display:none}
+    nav.top.open .nav-links{display:flex;flex-direction:column;align-items:center;padding:12px 0 4px}
+    nav.top.open .nav-links a{width:100%;max-width:320px;text-align:center}
   }
 </style>
 </head>
 <body>
 <div class="wrap">
-  <nav>
-    <a href="#principles">三大原則</a>
-    <a href="#checklist">檢查清單</a>
-    <a href="#myths">迷思破解</a>
-    <a href="#gear">安全設備</a>
-    <a href="#videos">影片教室</a>
-    <a href="#about">關於本頁</a>
-    <a href="#contact">聯絡我們</a>
+  <nav class="top" aria-label="頁面導覽">
+    <button id="nav-toggle" class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">☰ 目錄</button>
+    <div class="nav-links" id="nav-links">
+      <a href="#principles">三大原則</a>
+      <a href="#checklist">檢查清單</a>
+      <a href="#myths">迷思破解</a>
+      <a href="#gear">安全設備</a>
+      <a href="#videos">影片教室</a>
+      <a href="#about">關於本頁</a>
+      <a href="#contact">聯絡我們</a>
+    </div>
   </nav>
+<script>
+(function(){
+  var nav = document.querySelector('nav.top');
+  var btn = document.getElementById('nav-toggle');
+  if(!nav || !btn) return;
+  btn.addEventListener('click', function(){
+    var open = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  nav.querySelectorAll('#nav-links a').forEach(function(a){
+    a.addEventListener('click', function(){
+      nav.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+</script>
 
   <header class="hero">
     <span class="badge">民間整理・非官方網站</span>
