@@ -39,6 +39,7 @@
     padding:14px 20px;margin:20px 0;font-size:18px;text-align:center}
   h2{font-size:30px;line-height:1.4;margin:52px 0 8px;padding-bottom:10px;border-bottom:3px solid #F0DFAE}
   h2 .pill{display:inline-block;font-size:18px;background:var(--sun);border-radius:999px;padding:4px 16px;margin-right:8px;vertical-align:middle}
+  #places h2 .pill{display:block;width:fit-content;margin:0 0 10px}
   .sub{color:var(--muted);font-size:18px;margin:0 0 20px}
   .zone{background:var(--soft-orange);border-radius:14px;padding:10px 18px;font-size:21px;margin:26px 0 12px}
   .zone.teal{background:var(--soft-teal)} .zone.yellow{background:var(--soft-yellow)} .zone.green{background:var(--soft-green)}
@@ -57,6 +58,9 @@
   .check li{display:flex;gap:12px;align-items:flex-start;background:var(--paper);
     border-radius:14px;padding:14px 18px;margin-bottom:10px;font-size:19px}
   .check input{width:28px;height:28px;margin-top:4px;accent-color:var(--teal);flex-shrink:0}
+  .points{list-style:none;padding:0;margin:0}
+  .points li{background:var(--paper);border-radius:14px;padding:14px 18px;margin-bottom:10px;font-size:19px}
+  .points b{color:var(--orange-dark)}
   .myth{border-left:8px solid var(--coral)}
   .myth .q{font-weight:700;font-size:21px}
   .myth .a{margin-top:8px}
@@ -92,6 +96,8 @@
       <a href="#myths">迷思破解</a>
       <a href="#fall">跌倒處理</a>
       <a href="#night">半夜起床</a>
+      <a href="#meds">用藥與吃飯</a>
+      <a href="#care">照顧家人</a>
       <a href="#gear">安全設備</a>
       <a href="#videos">影片教室</a>
       <a href="#contact">聯絡我們</a>
@@ -126,8 +132,6 @@
     </div>
   </header>
 
-  <p class="note">💡 這個頁面是給子女和長輩一起看的：字比較大、步驟寫得比較白話，手機看也沒問題。</p>
-
   <section id="principles">
     <h2><span class="pill">先記住</span>三大原則</h2>
     <p class="sub">家裡的安全，先抓好這三件事，其他再慢慢補。</p>
@@ -148,6 +152,7 @@
         <p>臥室到廁所的動線裝感應夜燈，拖鞋和眼鏡放固定位置，半夜起床不用找東西、不用摸黑走。</p>
       </div>
     </div>
+    <p class="note">📊 國健署統計：65 歲以上每 6 人就有 1 人一年內曾跌倒，過半跌倒發生在家裡。先把家裡檢查一遍，是最划算的第一步。</p>
   </section>
 
   <section id="checklist">
@@ -159,6 +164,7 @@
       <li><input type="checkbox"> 馬桶旁、淋浴區有扶手可以握</li>
       <li><input type="checkbox"> 地面有防滑墊或防滑處理，不會一踩就滑</li>
       <li><input type="checkbox"> 有沐浴椅，洗澡不用全程站著</li>
+      <li><input type="checkbox"> 馬桶座有加高，坐下站起比較不費力</li>
       <li><input type="checkbox"> 熱水溫度有先調好，不會突然燙到</li>
       <li><input type="checkbox"> 浴室門不反鎖，緊急時家人在外面進得去</li>
     </ul>
@@ -173,14 +179,14 @@
     <h3 class="zone yellow">🛏️ 臥室</h3>
     <ul class="check">
       <li><input type="checkbox"> 床邊有扶手或穩固的家具可以借力起身</li>
-      <li><input type="checkbox"> 床頭到廁所有感應夜燈，半夜不用摸黑</li>
+      <li><input type="checkbox"> 床邊有開關或感應夜燈，床頭到廁所一路都亮</li>
       <li><input type="checkbox"> 拖鞋是包覆式、防滑底，不穿鬆垮的拖鞋走動</li>
       <li><input type="checkbox"> 眼鏡、手機、呼叫鈴放床邊，伸手就拿得到</li>
     </ul>
 
     <h3 class="zone green">🚪 樓梯與玄關</h3>
     <ul class="check">
-      <li><input type="checkbox"> 樓梯兩邊有扶手，階梯邊緣看得清楚</li>
+      <li><input type="checkbox"> 樓梯兩邊有扶手，階梯邊緣貼高對比顏色或止滑條</li>
       <li><input type="checkbox"> 玄關、走道沒有雜物、電線橫在地上</li>
       <li><input type="checkbox"> 門口有椅子可以坐著換鞋，不用單腳站著穿</li>
     </ul>
@@ -245,7 +251,7 @@
       <div class="card teal">
         <div class="icon">2️⃣</div>
         <h3>坐起坐穩</h3>
-        <p>慢慢坐到床邊、雙腳放地上，坐穩、覺得不暈再站。</p>
+        <p>慢慢坐到床邊、雙腳放地上，坐 3 到 5 分鐘，覺得不暈再站。</p>
       </div>
       <div class="card yellow">
         <div class="icon">3️⃣</div>
@@ -253,7 +259,58 @@
         <p>扶床邊或扶手站穩，夜燈亮著、拖鞋穿好，再往廁所走。</p>
       </div>
     </div>
-    <p class="note">💡 眼鏡、水、手機、呼叫鈴，睡前就放床邊固定位置，半夜不用找。</p>
+  </section>
+
+  <section id="meds">
+    <h2><span class="pill">吃藥吃飯</span>用藥與吃飯</h2>
+    <p class="sub">這兩件事每天都發生，出錯的機會也最多，先把做法固定下來。</p>
+
+    <h3 class="zone">💊 用藥安全</h3>
+    <ul class="points">
+      <li><b>藥單一張：</b>把藥名、劑量、時間、開立醫師寫成一張最新藥單，中藥、保健品也要列進去，看診時主動給醫師看。</li>
+      <li><b>分格藥盒＋提醒：</b>一週份量分格放好，手機設提醒，不要只靠記憶。</li>
+      <li><b>不要自行改藥：</b>不要自行停藥、減量，也不要漏吃一次就加倍補吃，有疑問先問醫師或藥師。</li>
+      <li><b>磨碎先問藥師：</b>有些藥不能磨碎或換服法，改之前先問藥師；定期請醫師或藥師檢視整張藥單。</li>
+    </ul>
+
+    <h3 class="zone teal">🍚 吃飯防嗆</h3>
+    <ul class="points">
+      <li><b>坐直慢慢吃：</b>坐直、細嚼慢嚥、專心吃，食物切小塊，牙口不好就選軟質食材。</li>
+      <li><b>還能咳就讓他咳：</b>咳得出來就不要拍背打斷，讓他自己把異物咳出來。</li>
+      <li><b>咳不出來立刻打 119：</b>完全發不出聲、咳不出來時，立刻打 119，再做腹部推擠，或用堅固椅背自救；不要伸手指進去掏。</li>
+    </ul>
+
+    <h3 class="zone yellow">🥚 營養與肌力</h3>
+    <ul class="points">
+      <li><b>每餐一掌心蛋白質：</b>豆、魚、蛋、肉平均分配在三餐，早晚再補一杯牛奶或優格。</li>
+      <li><b>每天動 10 分鐘：</b>椅子深蹲、站姿墊腳尖、單腳站立交替做，不用重物也能練下肢肌力與平衡。</li>
+    </ul>
+  </section>
+
+  <section id="care">
+    <h2><span class="pill">照顧家人</span>照顧與求助</h2>
+    <p class="sub">照顧的人不用一個人硬撐，方法對了，長輩和自己都輕鬆一點。</p>
+
+    <h3 class="zone">🧠 失智溝通</h3>
+    <ul class="points">
+      <li><b>先接住情緒：</b>重複問就再回答一次，不要爭辯，也不要拿問題考他。</li>
+      <li><b>說慢、說短、給選擇：</b>語速放慢、句子縮短，用「吃麵還是吃飯」這種選擇題代替開放式提問。</li>
+      <li><b>答案貼出來：</b>把常問的答案寫成字條、日曆貼在顯眼處，減少一再口頭提醒。</li>
+      <li><b>給他熟悉的小事：</b>折毛巾、簡單家務、陪著去社區走走，維持尊嚴和社交。</li>
+    </ul>
+
+    <h3 class="zone teal">🤝 長照資源</h3>
+    <ul class="points">
+      <li><b>打 1966 申請長照：</b>專人到府評估，依失能等級安排居家服務、日間照顧、輔具與無障礙改善補助。</li>
+      <li><b>評估時主要照顧者要在場：</b>把真實生活狀況說清楚，長輩有時會把困難輕描淡寫帶過。</li>
+      <li><b>累了就申請喘息：</b>照顧者可以申請喘息服務，讓專業人員短暫接手；家庭照顧者專線 0800-507-272、失智關懷專線 0800-474-580 也可以問。</li>
+    </ul>
+
+    <h3 class="zone green">🛏️ 久臥照護</h3>
+    <ul class="points">
+      <li><b>約每兩小時換一次姿勢：</b>久臥不動最容易壓傷皮膚，定時翻身換姿勢，骨頭突出的地方墊軟墊。</li>
+      <li><b>每天檢查皮膚：</b>看骨頭突出處有沒有發紅、破皮，保持皮膚乾爽清潔。</li>
+    </ul>
   </section>
 
   <section id="places">
@@ -285,49 +342,42 @@
 
   <section id="gear">
     <h2><span class="pill">選購</span>安全設備</h2>
-    <p class="sub">第一版先列選品方向與選購要點，蝦皮分潤連結尚未上架；上架後會在此標示分潤揭露，絕不先掛假連結。</p>
+    <p class="sub">選購要點先列出來，蝦皮連結尚未上架；上架後會在區首標示分潤揭露。</p>
     <div class="grid">
       <div class="card">
         <div class="icon">🤝</div>
         <h3>浴室扶手</h3>
-        <p>選購要點：確認承重標示與安裝方式，鎖牆式比吸盤式穩，長度要夠握。</p>
-        <p><a class="btn">蝦皮連結待補</a></p>
+        <p>確認承重標示與安裝方式，鎖牆式比吸盤式穩，長度要夠握。</p>
       </div>
       <div class="card">
         <div class="icon">🧽</div>
         <h3>防滑墊／防滑貼</h3>
-        <p>選購要點：浴室、廚房水槽前都要鋪，要能固定、不捲邊、定期清洗。</p>
-        <p><a class="btn">蝦皮連結待補</a></p>
+        <p>浴室、廚房水槽前都要鋪，要能固定、不捲邊、定期清洗。</p>
       </div>
       <div class="card">
         <div class="icon">💡</div>
         <h3>感應夜燈</h3>
-        <p>選購要點：裝在臥室到廁所的動線，感應式、亮度柔和不刺眼。</p>
-        <p><a class="btn">蝦皮連結待補</a></p>
+        <p>裝在臥室到廁所的動線，感應式、亮度柔和不刺眼。</p>
       </div>
       <div class="card">
         <div class="icon">🪑</div>
         <h3>沐浴椅</h3>
-        <p>選購要點：高度可調、腳墊防滑，承重標示要看清楚。</p>
-        <p><a class="btn">蝦皮連結待補</a></p>
+        <p>高度可調、腳墊防滑，承重標示要看清楚。</p>
       </div>
       <div class="card">
         <div class="icon">🛏️</div>
         <h3>床邊扶手</h3>
-        <p>選購要點：床邊起身借力用，確認與床架相容、安裝後不會搖晃。</p>
-        <p><a class="btn">蝦皮連結待補</a></p>
+        <p>床邊起身借力用，確認與床架相容、安裝後不會搖晃。</p>
       </div>
       <div class="card">
         <div class="icon">💊</div>
         <h3>分格藥盒</h3>
-        <p>選購要點：一週份量分格，字要大、格子好開，方便每天對照。</p>
-        <p><a class="btn">蝦皮連結待補</a></p>
+        <p>一週份量分格，字要大、格子好開，方便每天對照。</p>
       </div>
       <div class="card">
         <div class="icon">🔔</div>
         <h3>緊急呼叫鈴</h3>
-        <p>選購要點：浴室、臥室各放一個，按了要有人聽得到，先跟家人約好回應方式。</p>
-        <p><a class="btn">蝦皮連結待補</a></p>
+        <p>浴室、臥室各放一個，按了要有人聽得到，先跟家人約好回應方式。</p>
       </div>
     </div>
   </section>
