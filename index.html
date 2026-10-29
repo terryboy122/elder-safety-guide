@@ -95,8 +95,10 @@
     nav.top{text-align:left}
     .nav-toggle{display:inline-block}
     .nav-links{display:none}
-    nav.top.open .nav-links{display:flex;flex-direction:column;align-items:center;padding:12px 0 4px;max-height:calc(100vh - 70px);overflow-y:auto}
-    nav.top.open .nav-links a{width:100%;max-width:320px;text-align:center}
+    nav.top.open{position:fixed;top:0;left:0;right:0;bottom:0;overflow-y:auto}
+    nav.top.open .nav-toggle{position:sticky;top:10px;z-index:2}
+    nav.top.open .nav-links{display:flex;flex-direction:column;align-items:center;padding:12px 0 16px;gap:6px}
+    nav.top.open .nav-links a{width:100%;max-width:320px;text-align:center;font-size:17px;line-height:1.4;padding:7px 14px}
   }
 </style>
 </head>
