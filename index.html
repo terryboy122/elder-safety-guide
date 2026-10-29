@@ -79,6 +79,7 @@
     <a href="#gear">安全設備</a>
     <a href="#videos">影片教室</a>
     <a href="#about">關於本頁</a>
+    <a href="#contact">聯絡我們</a>
   </nav>
 
   <header class="hero">
@@ -251,7 +252,53 @@
     <div class="about">
       <p>本站為民間整理・非政府官方網站，內容為一般居家安全資訊，不能取代醫師、物理治療師等專業人員的建議；身體狀況有疑慮時，請諮詢專業人員，緊急狀況請打 119。</p>
       <p>安全設備區未來掛上蝦皮分潤連結時，會在區首標示分潤揭露，不影響你的購買價格；第一版連結尚未上架，絕不先掛假連結。</p>
+      <p>管理員登入：<a href="https://fire-safety-guide.pages.dev/admin.html">留言管理頁</a>（僅供站主使用，兩站留言統一管理）。</p>
     </div>
+  </section>
+
+  <section id="contact">
+    <h2><span class="pill">留言</span>聯絡我們・留言板</h2>
+    <p class="sub">有問題、想補充的安全做法，或發現頁面有錯，都可以在這裡留言。</p>
+    <form id="board-form" class="card" aria-label="留言板表單">
+      <div style="margin-bottom:12px">
+        <label for="board-name" style="display:block;margin-bottom:6px;font-weight:700">稱呼</label>
+        <input id="board-name" name="name" type="text" placeholder="例如：陳先生" style="width:100%;box-sizing:border-box;padding:12px;border:2px solid #F0DFAE;border-radius:14px;font-size:19px;background:#fff;color:var(--ink)">
+      </div>
+      <div style="margin-bottom:12px">
+        <label for="board-msg" style="display:block;margin-bottom:6px;font-weight:700">留言內容</label>
+        <textarea id="board-msg" name="message" rows="4" placeholder="寫下你的問題或建議…" style="width:100%;box-sizing:border-box;padding:12px;border:2px solid #F0DFAE;border-radius:14px;font-size:19px;background:#fff;color:var(--ink)"></textarea>
+      </div>
+      <div style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden" aria-hidden="true"><label>請勿填寫<input name="website" type="text" tabindex="-1" autocomplete="off"></label></div>
+      <button id="board-submit" type="submit" style="background:#E8730C;color:#fff;border:0;font-size:19px;font-weight:700;padding:12px 28px;border-radius:999px;cursor:pointer">送出留言</button>
+      <p id="board-status" style="margin:12px 0 0;color:var(--muted)"></p>
+      <p style="margin:12px 0 0;color:var(--muted)">留言只會傳給站主，僅供站主回覆使用，不會公開顯示在頁面上，也不會提供給第三方。</p>
+    </form>
+<script>
+(function(){
+  var form = document.getElementById('board-form');
+  if(!form) return;
+  form.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    var name = document.getElementById('board-name').value.trim();
+    var msg = document.getElementById('board-msg').value.trim();
+    var hp = form.querySelector('input[name="website"]').value.trim();
+    var status = document.getElementById('board-status');
+    var btn = document.getElementById('board-submit');
+    if(!name || !msg){ status.textContent = '請填寫稱呼與留言內容。'; return; }
+    btn.disabled = true;
+    status.textContent = '傳送中…';
+    fetch('/api/messages', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name: name, message: msg, website: hp }) })
+      .then(function(r){ return r.json().then(function(d){ return { ok: r.ok, d: d }; }); })
+      .then(function(res){
+        if(res.ok && res.d.ok){ status.textContent = '留言已送出，謝謝！'; form.reset(); }
+        else if(res.d && res.d.error === 'too_fast'){ status.textContent = '留言太頻繁，請 60 秒後再試。'; }
+        else { status.textContent = '送出失敗，請稍後再試。'; }
+        btn.disabled = false;
+      })
+      .catch(function(){ status.textContent = '送出失敗，請檢查網路後再試。'; btn.disabled = false; });
+  });
+})();
+</script>
   </section>
 
   <footer>© 2026 長輩居家安全</footer>
